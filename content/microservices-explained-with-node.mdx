@@ -1,0 +1,42 @@
+---
+title: "Microservices Explained with Node.js"
+publishedAt: "2025-03-16"
+summary: "A quick guide to microservices using Node.js examples for scalable apps."
+---
+
+Microservices split apps into small, independent services that communicate via APIs, making them easier to scale and update compared to monoliths. As a Full Stack Developer, I use Node.js for its lightweight, async nature—perfect for microservices. Here’s a summed-up look with examples.
+
+```javascript
+// Simple Node.js Microservice (User Service)
+const express = require("express");
+const app = express();
+app.get("/users/:id", (req, res) => res.json({ id: req.params.id, name: "Sergio" }));
+app.listen(3000, () => console.log("User Service on port 3000"));
+```
+
+| Aspect          | Monolith          | Microservices     |
+|-----------------|-------------------|-------------------|
+| Size            | Big, coupled      | Small, independent|
+| Scaling         | Whole app         | Per service       |
+| Tech            | One stack         | Flexible          |
+
+---
+
+### Explanation:
+- **What Are Microservices?**: Small, autonomous services (e.g., a "User Service") that handle specific tasks and talk via APIs, unlike monoliths where everything’s tightly coupled.
+- **Node.js Example**: The code shows a basic Express microservice listening on port 3000, returning user data—simple and independent.
+- **Table**: Highlights key differences (size, scaling, tech freedom) for quick comparison.
+- **Why Node.js?**: Its non-blocking I/O suits microservices’ need for fast, lightweight communication.
+
+### Additional Node.js Example (if you’d like):
+For a second service (e.g., "Order Service") interacting with the User Service:
+```javascript
+const express = require("express");
+const axios = require("axios");
+const app = express();
+app.get("/orders/:userId", async (req, res) => {
+  const user = await axios.get(`http://localhost:3000/users/${req.params.userId}`);
+  res.json({ orderId: 1, user: user.data });
+});
+app.listen(3001, () => console.log("Order Service on port 3001"));
+```
