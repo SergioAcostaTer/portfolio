@@ -75,7 +75,7 @@ export const ResumeCard = ({
   return (
     <Link
       href={href || "#"}
-      className="block cursor-pointer"
+      className="block cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 p-4 rounded-lg transition-colors duration-300 ease-in-out"
       onClick={handleClick}
     >
       <Card className="flex">
@@ -109,7 +109,7 @@ export const ResumeCard = ({
                 )}
                 <ChevronRightIcon
                   className={cn(
-                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100",
+                    "size-4 translate-x-0 transform opacity-0 transition-all duration-300 ease-out group-hover:translate-x-1 group-hover:opacity-100 hidden sm:inline-block",
                     isExpanded ? "rotate-90" : "rotate-0"
                   )}
                 />

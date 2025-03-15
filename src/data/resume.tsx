@@ -76,7 +76,7 @@ export const DATA = {
   },
   work: [
     {
-      company: "BITBOX S.L. (IKEA Spanish Islands)",
+      company: "BITBOX S.L. (IKEA)",
       href: "https://bitbox.com/",
       location: "Las Palmas, Spain",
       title: "Full Stack Developer",
@@ -86,7 +86,6 @@ export const DATA = {
       end: "Present",
       description:
         "Development and maintenance of web applications using modern technologies such as React, Node.js, Spring Boot, and PostgreSQL. Implemented microservices architecture with Kafka. SCRUM methodology and CI/CD pipelines.",
-      badges: ["Microservices"],
     },
   ],
   education: [
@@ -108,7 +107,6 @@ export const DATA = {
       logoUrl: "/halmstad.webp",
       start: "2024",
       end: "2025",
-      badges: ["Erasmus+"],
       location: "Halmstad, Sweden",
       description:
         "Erasmus+ exchange program in Computer Science. Studied advanced programming and software engineering.",
