@@ -1,0 +1,57 @@
+# Enable rewrite engine
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Force HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://sergioaco.com/$1 [R=301,L]
+
+    # Redirect www to non-www
+    RewriteCond %{HTTP_HOST} ^www\.sergioaco\.com [NC]
+    RewriteRule ^(.*)$ https://sergioaco.com/$1 [R=301,L]
+</IfModule>
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Prevent directory listing
+Options -Indexes
+
+# Protect .htaccess and sensitive files
+<Files ~ "^\.ht">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+# Enable GZIP compression for performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml application/rss+xml application/json
+    AddOutputFilterByType DEFLATE image/svg+xml font/ttf font/otf font/opentype
+</IfModule>
+
+# Set cache expiration for static assets
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresDefault "access plus 2 days"
+</IfModule>
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "DENY"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self';"
+</IfModule>
+
+# Block access to sensitive file types
+RedirectMatch 403 /\..*$
+RedirectMatch 403 ^/(wp-config\.php|php\.ini|license\.txt|readme\.html)$ [NC]
