@@ -19,7 +19,38 @@ interface ResumeCardProps {
   period: string;
   description?: string;
   location?: string;
+  startDate?: Date;
 }
+
+const getPeriodTime = (startDate: Date, endDate?: Date): string => {
+  const effectiveEndDate = endDate || new Date();
+  const diffMs = effectiveEndDate.getTime() - startDate.getTime();
+  const diffDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+  const startYear = startDate.getFullYear();
+  const endYear = effectiveEndDate.getFullYear();
+  const startMonth = startDate.getMonth();
+  const endMonth = effectiveEndDate.getMonth();
+  const diffMonthsTotal =
+    (endYear - startYear) * 12 +
+    (endMonth - startMonth) +
+    (diffDays >= 1 ? 1 : 0);
+
+  const diffYears = Math.floor(diffMonthsTotal / 12);
+  const remainingMonths = diffMonthsTotal % 12;
+
+  let result = "";
+  if (diffYears > 0) {
+    result += `${diffYears} year${diffYears > 1 ? "s" : ""}`;
+  }
+  if (remainingMonths > 0) {
+    if (result) result += " and ";
+    result += `${remainingMonths} month${remainingMonths > 1 ? "s" : ""}`;
+  }
+
+  return result || (diffDays > 0 ? "1 month" : "Less than a month");
+};
+
 export const ResumeCard = ({
   logoUrl,
   altText,
@@ -30,6 +61,7 @@ export const ResumeCard = ({
   period,
   description,
   location,
+  startDate,
 }: ResumeCardProps) => {
   const [isExpanded, setIsExpanded] = React.useState(true);
 
@@ -82,11 +114,14 @@ export const ResumeCard = ({
                   )}
                 />
               </h3>
-              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right">
-                {period}
+              <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right font-bold flex flex-col gap-1">
+                <span>{period}</span>
+                <span>{startDate && getPeriodTime(new Date(startDate))}</span>
               </div>
             </div>
-            {subtitle && <div className="font-sans text-xs font-bold">{subtitle}</div>}
+            {subtitle && (
+              <div className="font-sans text-xs font-bold">{subtitle}</div>
+            )}
             {location && <div className="font-sans text-xs">{location}</div>}
           </CardHeader>
           {description && (
