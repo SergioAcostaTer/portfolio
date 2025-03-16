@@ -35,3 +35,9 @@ export function formatDate(date: string) {
     return `${fullDate} (${yearsAgo}y ago)`;
   }
 }
+
+export function calculateReadingTime(content: string) {
+  const wordsPerMinute = 200;
+  const textLength = content.split(" ").length;
+  return Math.ceil(textLength / wordsPerMinute);
+}

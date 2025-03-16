@@ -13,34 +13,22 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   return (
-    <section>
+    <section className="mt-16 max-w-2xl mx-auto">
       <BlurFade delay={BLUR_FADE_DELAY}>
-        <h1 className="font-medium text-2xl mb-8 tracking-tighter">blog</h1>
+        <h1 className="text-3xl font-bold tracking-tight mb-6">Blog</h1>
       </BlurFade>
-      {posts
-        .sort((a, b) => {
-          if (
-            new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)
-          ) {
-            return -1;
-          }
-          return 1;
-        })
-        .map((post, id) => (
-          <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
-            <Link
-              className="flex flex-col space-y-1 mb-4"
-              href={`/blog/${post.slug}`}
-            >
-              <div className="w-full flex flex-col">
-                <p className="tracking-tight">{post.metadata.title}</p>
-                <p className="h-6 text-xs text-muted-foreground">
-                  {post.metadata.publishedAt}
-                </p>
-              </div>
-            </Link>
-          </BlurFade>
-        ))}
+      <div className="space-y-6">
+        {posts
+          .sort((a, b) => new Date(b.metadata.publishedAt).getTime() - new Date(a.metadata.publishedAt).getTime())
+          .map((post, id) => (
+            <BlurFade delay={BLUR_FADE_DELAY * 2 + id * 0.05} key={post.slug}>
+              <Link href={`/blog/${post.slug}`} className="block p-4 transition-all border rounded-xl hover:bg-accent hover:shadow-md">
+                <h2 className="text-lg font-semibold tracking-tight">{post.metadata.title}</h2>
+                <p className="text-sm text-muted-foreground">{post.metadata.publishedAt}</p>
+              </Link>
+            </BlurFade>
+          ))}
+      </div>
     </section>
   );
 }
