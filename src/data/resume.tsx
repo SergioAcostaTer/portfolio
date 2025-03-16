@@ -10,7 +10,7 @@ export const DATA = {
     "https://www.google.com/maps/place/Las+Palmas+de+Gran+Canaria,+Las+Palmas/@28.1173592,-15.4602595,14z",
   description: "Software Engineer & Full-Stack Developer",
   summary:
-    "I’m a Software Engineer with a focus on backend systems and full-stack development, currently [working at BITBOX S.L. (IKEA Spanish Islands)](/#work) since 2025, building scalable, high-performance web applications. I excel in designing robust APIs, microservices, and database architectures, while also delivering seamless front-end experiences. I’m [pursuing a Computer Engineering degree at ULPGC](/#education) and enhancing my skills through an [Erasmus+ exchange at Halmstad University](/#education).",
+    "I’m a Software Engineer at [BITBOX S.L. (IKEA Spanish Islands)](/#work) since 2025, building scalable web apps with strong APIs and microservices. While finishing my [Computer Engineering degree at ULPGC](/#education) and an [Erasmus+ exchange at Halmstad University](/#education), I deliver robust backend and front-end solutions with skill and adaptability.",
   avatarUrl: "/me.webp",
   skills: [
     // Core Backend Languages & Technologies
@@ -79,16 +79,16 @@ export const DATA = {
   },
   work: [
     {
-      company: "BITBOX S.L. (IKEA)",
+      company: "BITBOX S.L.|(IKEA)",
       href: "https://bitbox.com/",
       location: "Las Palmas, Spain",
-      title: "Software Engineer (Backend & Full-Stack)",
+      title: "Full-Stack Developer",
       logoUrl: "/bitbox.webp",
       start: "Jan 2025",
       startDate: new Date(2025, 0),
       end: "Present",
       description:
-        "Architected and developed scalable backend systems for web applications using Node.js, Spring Boot, and PostgreSQL. Designed and implemented RESTful APIs and microservices with Kafka for event-driven communication. Optimized database performance and integrated Redis for caching. Contributed to front-end development with React and TypeScript, ensuring cohesive full-stack solutions. Leveraged Docker and CI/CD pipelines in an Agile SCRUM environment.",
+        "Developed scalable backend systems using Java and Spring Boot, with PostgreSQL for data storage. Built RESTful APIs and microservices, utilizing Kafka for event-driven communication. Contributed to front-end development with React and TypeScript. Managed code and collaboration through Git in an Agile SCRUM environment.",
     },
   ],
   education: [
@@ -106,7 +106,7 @@ export const DATA = {
     {
       school: "Halmstad University",
       href: "https://www.hh.se/",
-      degree: "Computer Science (Erasmus+ Exchange)",
+      degree: "Computer Science",
       logoUrl: "/halmstad.webp",
       start: "2024",
       end: "2025",
@@ -175,12 +175,7 @@ export const DATA = {
       active: true,
       description:
         "Built a lightweight Chrome extension with a Node.js backend to fetch real-time Bitcoin prices via the Binance API. Utilized Redis for caching to reduce API calls and improve response times, deployed with Docker for consistency.",
-      technologies: [
-        "JavaScript",
-        "Binance API",
-        "HTML",
-        "CSS",
-      ],
+      technologies: ["JavaScript", "Binance API", "HTML", "CSS"],
       links: [
         {
           type: "Chrome Web Store",

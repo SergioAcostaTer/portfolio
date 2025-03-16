@@ -26,6 +26,11 @@ export default function Header() {
     const targetId = href.substring(1);
     const targetElement = document.getElementById(targetId);
 
+    // if not in home, redirect to home and set hash
+    if (window.location.pathname !== "/") {
+      window.location.href = `/#${targetId}`;
+    }
+
     if (targetElement) {
       const headerElement = document.querySelector("header");
       const headerHeight = headerElement ? headerElement.offsetHeight : 0;
