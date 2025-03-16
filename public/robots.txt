@@ -1,0 +1,11 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /private
+
+# Host
+Host: https://sergioaco.com
+
+# Sitemaps
+Sitemap: https://sergioaco.com/sitemap.xml
