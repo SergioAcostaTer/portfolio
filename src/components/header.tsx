@@ -13,36 +13,51 @@ export default function Header() {
     href: string
   ) => {
     e.preventDefault();
+    
+    // Close mobile menu
     setIsOpen(false);
 
+    // Handle scroll to top or redirect to home
     if (href === "body") {
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
+      if (window.location.pathname !== "/") {
+        // Redirect to home page if not already there
+        window.location.href = "/";
+      } else {
+        // Scroll to top if already on home page
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+        window.history.pushState({}, "", "/");
+      }
       return;
     }
 
-    const targetId = href.substring(1);
+    // Extract target ID from href
+    const targetId = href.startsWith("#") ? href.substring(1) : href;
     const targetElement = document.getElementById(targetId);
 
-    // if not in home, redirect to home and set hash
+    // If not on home page, redirect with hash
     if (window.location.pathname !== "/") {
       window.location.href = `/#${targetId}`;
+      return;
     }
 
+    // Scroll to target element if it exists
     if (targetElement) {
       const headerElement = document.querySelector("header");
-      const headerHeight = headerElement ? headerElement.offsetHeight : 0;
+      const headerHeight = headerElement?.offsetHeight ?? 0;
       const offset = headerHeight + 20;
-      const elementPosition =
-        targetElement.getBoundingClientRect().top + window.scrollY;
+      const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
       const offsetPosition = elementPosition - offset;
 
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth",
       });
+      
+      // Update URL hash without page reload
+      window.history.pushState({}, "", `#${targetId}`);
     }
   };
 
