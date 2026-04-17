@@ -1,5 +1,17 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon } from "lucide-react";
+import type { ReactNode } from "react";
+
+type PortfolioProject = {
+    title: string;
+    href: string;
+    dates: string;
+    active: boolean;
+    description: string;
+    technologies: string[];
+    links: { type: string; href: string; icon: ReactNode }[];
+    image: string;
+};
 
 export const DATA = {
     name: "Sergio Acosta Quintana",
@@ -8,54 +20,49 @@ export const DATA = {
     location: "Las Palmas, Spain",
     locationLink:
         "https://www.google.com/maps/place/Las+Palmas+de+Gran+Canaria,+Las+Palmas/@28.1173592,-15.4602595,14z",
-    description: "Software Engineer & Full-Stack Developer",
+    description: "Backend Software Engineer | Payments, Java & Distributed Systems",
     summary:
-        "I’m a Software Engineer at [BITBOX S.L. (IKEA Spanish Islands)](/#work) since 2025, building scalable web apps with strong APIs and microservices. While finishing my [Computer Engineering degree at ULPGC](/#education) and an [Erasmus+ exchange at Halmstad University](/#education), I deliver robust backend and front-end solutions with skill and adaptability.",
+        "Backend Engineer specializing in enterprise payments, high-availability Java services, and event-driven architectures. I modernized critical systems at [IKEA](/#work) and now work on [Inditex payment gateway integrations](/#work) with Spring Boot, DB2, MongoDB, Couchbase, OpenAPI, and React. Focused on distributed systems, API design, cloud infrastructure, and CI/CD automation with Clean Architecture and Domain-Driven Design.",
     avatarUrl: "/me.png",
     skills: [
-        // Core Backend Languages & Technologies
-        "TypeScript",
-        "Node.js",
-        "Python",
-        "Java",
-        "SQL",
-        // Backend Frameworks & Tools
-        "Express.js",
-        "Spring Boot",
-        "NestJS",
-        "Django",
-        // Databases & Messaging Systems
+        "Java 21",
+        "Spring Boot 3",
+        "Spring Batch",
+        "Spring Security",
+        "Microservices",
+        "Apache Kafka",
+        "IBM DB2",
+        "OpenAPI",
+        "REST APIs",
+        "AWS (EC2, S3, RDS)",
+        "Docker",
+        "GitHub Actions CI/CD",
+        "Terraform",
+        "Prometheus",
+        "Grafana",
         "PostgreSQL",
         "MongoDB",
+        "Couchbase",
         "Redis",
-        "Kafka",
-        "RabbitMQ",
-        // DevOps & Cloud
-        "Docker",
-        "Kubernetes",
-        "AWS (EC2, S3, Lambda)",
-        "CI/CD (GitHub Actions, Jenkins)",
-        "Linux Server Management",
-        // Full-Stack & Frontend
-        "JavaScript (ES6+)",
-        "React.js",
-        "Next.js",
-        "Angular",
-        "Tailwind CSS",
-        // Other
-        "RESTful APIs",
-        "GraphQL",
-        "Microservices Architecture",
-        "Git",
-        "Unit Testing (Jest, JUnit)",
+        "Vector DBs",
+        "Hibernate/JPA",
+        "Clean Architecture",
+        "Event-Driven Architecture",
+        "DDD",
+        "Integration Testing",
+        "OAuth2/JWT",
+        "React",
+        "TypeScript",
+        "API Contract Design",
     ],
+    languages: ["English (B2/C1)", "Spanish (Native)"],
     navbar: [
         { href: "/", icon: HomeIcon, label: "Home" },
         { href: "/blog", icon: NotebookIcon, label: "Blog" },
     ],
     contact: {
         email: "sergioacostaquintana@gmail.com",
-        tel: undefined,
+        tel: "+34 600 24 39 94",
         social: {
             GitHub: {
                 name: "GitHub",
@@ -65,9 +72,15 @@ export const DATA = {
             },
             LinkedIn: {
                 name: "LinkedIn",
-                url: "https://www.linkedin.com/in/sergioacostaquintana/",
+                url: "https://linkedin.com/in/sergioacostaquintana",
                 icon: Icons.linkedin,
                 navbar: true,
+            },
+            Portfolio: {
+                name: "Portfolio",
+                url: "https://sergioaco.com",
+                icon: Icons.globe,
+                navbar: false,
             },
             email: {
                 name: "Send Email",
@@ -79,29 +92,41 @@ export const DATA = {
     },
     work: [
         {
-            company: "BITBOX S.L.|(IKEA)",
-            href: "https://bitbox.com/",
+            company: "SNGULAR | Inditex",
+            href: "https://www.sngular.com/",
+            location: "Remote",
+            title: "Backend Software Engineer",
+            logoUrl: "/logo2.png",
+            start: "Apr 2026",
+            startDate: new Date(2026, 3),
+            end: "Present",
+            description:
+                "Working on Inditex's global payment gateway for all group brands and markets in an enterprise environment using Spring Boot, DB2, MongoDB, Couchbase, OpenAPI, and React. Contributing to backend services, API contracts, and integration flows across legacy and modern systems while delivering reliable, scalable, and maintainable payment features in a cross-functional team.",
+        },
+        {
+            company: "BITBOX S.L. | IKEA",
+            href: "https://bitboxonline.com/",
             location: "Las Palmas, Spain",
-            title: "Full-Stack Developer",
+            title: "Backend Software Engineer",
             logoUrl: "/bitbox.webp",
             start: "Jan 2025",
             startDate: new Date(2025, 0),
-            end: "Present",
+            end: "Apr 2026",
             description:
-                "Developed scalable backend systems using Java and Spring Boot, with PostgreSQL for data storage. Built RESTful APIs and microservices, utilizing Kafka for event-driven communication. Contributed to front-end development with React and TypeScript. Managed code and collaboration through Git in an Agile SCRUM environment.",
+                "Developed mission-critical systems for IKEA's loyalty program (400k+ active cards), migrating legacy backends to Spring Boot 3 and improving resilience and delivery speed by 40% with CI/CD automation. Replaced 7 legacy PL/SQL jobs with Spring Batch workflows, cutting processing time by 55% and saving around 40h/month of support while eliminating critical failure points. Architected a decoupled insurance platform integrating Mapfre and Adeslas via Kafka and microservices with strict isolation to ensure scalability and avoid vendor lock-in.",
         },
     ],
     education: [
         {
             school: "University of Las Palmas de Gran Canaria (ULPGC)",
             href: "https://www.ulpgc.es/",
-            degree: "Bachelor's in Computer Engineering",
+            degree: "BSc Computer Engineering (Final Year Student)",
             logoUrl: "/ulpgc.webp",
             start: "2022",
-            end: "Present",
+            end: "Expected graduation Jun 2026",
             location: "Las Palmas, Spain",
             description:
-                "Pursuing a degree in Computer Engineering with a focus on software architecture, distributed systems, and backend development. Coursework includes advanced algorithms, database design, and cloud computing.",
+                "Final year student focused on software architecture, distributed systems, and backend engineering.",
         },
         {
             school: "Halmstad University",
@@ -112,12 +137,12 @@ export const DATA = {
             end: "2025",
             location: "Halmstad, Sweden",
             description:
-                "Completed an Erasmus+ program specializing in backend development and software engineering. Studied scalable system design, message queues, and cloud-native technologies.",
+                "Exchange program in Computer Science (Erasmus+) focused on software engineering and distributed systems.",
         },
     ],
     projects: [
         {
-            title: "NexoCloud – Intelligent Cloud Storage Platform",
+            title: "NexoCloud - Intelligent Cloud Storage Platform",
             href: "https://github.com/SergioAcostaTer/aicloud-drive",
             dates: "2026",
             active: true,
@@ -180,7 +205,7 @@ export const DATA = {
             dates: "2025",
             active: true,
             description:
-                "Designed and deployed two production-grade AWS architectures (ECS Fargate & Serverless Lambda) using 1,300+ lines of CloudFormation, implementing secure VPC networking, API Gateway, and DynamoDB to support container orchestration and decoupled microservices.",
+                "Designed and deployed two production-grade AWS architectures (ECS Fargate and Serverless Lambda) using 1,300+ lines of CloudFormation, implementing secure VPC networking, API Gateway, and DynamoDB to support container orchestration and decoupled microservices.",
             technologies: [
                 "AWS ECS Fargate",
                 "AWS Lambda",
@@ -199,10 +224,10 @@ export const DATA = {
                 {
                     type: "GitHub",
                     href: "https://github.com/SergioAcostaTer/cloud-computing-1",
-                    icon: <Icons.github className='size-3' />,
-                }
+                    icon: <Icons.github className="size-3" />,
+                },
             ],
             image: "/projects/aws.png",
-        }
-    ]
+        },
+    ] as PortfolioProject[]
 };

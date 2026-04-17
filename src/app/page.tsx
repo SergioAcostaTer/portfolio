@@ -20,7 +20,7 @@ export default function Page() {
                                 delay={BLUR_FADE_DELAY}
                                 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none"
                                 yOffset={8}
-                                text={`Hi, I'm ${DATA.name.split(" ")[0]} 👋`}
+                                text={`Hi, I'm ${DATA.name.split(" ")[0]}`}
                             />
                             <BlurFadeText
                                 className="max-w-[600px] md:text-xl"
@@ -50,7 +50,7 @@ export default function Page() {
             <section id="work">
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 5}>
-                        <h2 className="text-xl font-bold">Work Experience</h2>
+                        <h2 className="text-xl font-bold">Professional Experience</h2>
                     </BlurFade>
                     {DATA.work.map((work, id) => (
                         <BlurFade
@@ -101,7 +101,7 @@ export default function Page() {
             <section id="skills">
                 <div className="flex min-h-0 flex-col gap-y-3">
                     <BlurFade delay={BLUR_FADE_DELAY * 9}>
-                        <h2 className="text-xl font-bold">Skills</h2>
+                        <h2 className="text-xl font-bold">Technical Skills</h2>
                     </BlurFade>
                     <div className="flex flex-wrap gap-1">
                         {DATA.skills.map((skill, id) => (
@@ -112,9 +112,28 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+            <section id="languages">
+                <div className="flex min-h-0 flex-col gap-y-3">
+                    <BlurFade delay={BLUR_FADE_DELAY * 11}>
+                        <h2 className="text-xl font-bold">Languages</h2>
+                    </BlurFade>
+                    <div className="flex flex-wrap gap-1">
+                        {DATA.languages?.map((language, id) => (
+                            <BlurFade
+                                key={language}
+                                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                            >
+                                <Badge key={language} variant="secondary">
+                                    {language}
+                                </Badge>
+                            </BlurFade>
+                        ))}
+                    </div>
+                </div>
+            </section>
             <section id="projects">
                 <div className="space-y-12 w-full py-12">
-                    <BlurFade delay={BLUR_FADE_DELAY * 11}>
+                    <BlurFade delay={BLUR_FADE_DELAY * 13}>
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
                                 <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
@@ -135,7 +154,7 @@ export default function Page() {
                         {DATA.projects.map((project, id) => (
                             <BlurFade
                                 key={project.title}
-                                delay={BLUR_FADE_DELAY * 12 + id * 0.05}
+                                delay={BLUR_FADE_DELAY * 14 + id * 0.05}
                             >
                                 <ProjectCard
                                     href={project.href}

@@ -1,9 +1,9 @@
 "use client";
-import Link from "next/link";
-import { useState, useEffect } from "react";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import { DATA } from "@/data/resume";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);

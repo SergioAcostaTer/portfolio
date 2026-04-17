@@ -18,35 +18,38 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
     metadataBase: new URL(DATA.url), // Assuming DATA.url is "https://sergioaco.com"
     title: {
-        default: "Sergio Acosta Quintana - Full Stack Developer",
-        template: "%s | Sergio Acosta Quintana - Full Stack Developer",
+        default: "Sergio Acosta Quintana - Backend Software Engineer",
+        template: "%s | Sergio Acosta Quintana - Backend Software Engineer",
     },
     description:
-        "Sergio Acosta Quintana is a Computer Science student and Full Stack Developer specializing in enterprise-grade applications using Java (Spring Boot) and modern web solutions with React and Node.js. Based in Las Palmas, Spain.",
+        "Backend Software Engineer focused on enterprise payments, Java, and distributed systems. Experience at IKEA and Inditex building resilient Spring Boot services, event-driven integrations, and production-grade APIs.",
     keywords: [
         "Sergio Acosta Quintana",
-        "Full Stack Developer",
-        "Java",
-        "Spring Boot",
-        "Microservices",
-        "Kafka",
-        "React.js",
-        "Node.js",
-        "Next.js",
+        "Backend Software Engineer",
+        "Payments",
+        "Java 21",
+        "Spring Boot 3",
+        "Distributed Systems",
+        "Event-Driven Architecture",
+        "Apache Kafka",
+        "DB2",
+        "MongoDB",
+        "Couchbase",
+        "OpenAPI",
         "TypeScript",
-        "PostgreSQL",
+        "React",
+        "CI/CD",
         "Docker",
         "AWS",
-        "Computer Science",
         "Las Palmas",
         "Spain",
     ],
     authors: [{ name: "Sergio Acosta Quintana", url: "https://sergioaco.com" }],
     creator: "Sergio Acosta Quintana",
     openGraph: {
-        title: "Sergio Acosta Quintana - Full Stack Developer",
+        title: "Sergio Acosta Quintana - Backend Software Engineer",
         description:
-            "Full Stack Developer and Computer Science student with expertise in Java (Spring Boot), React, Node.js, and scalable, event-driven microservices. Explore my projects.",
+            "Backend engineer in enterprise payments, specializing in Java, Spring Boot, distributed systems, and resilient API integrations.",
         url: "https://sergioaco.com",
         siteName: "Sergio Acosta Quintana",
         images: [
@@ -54,7 +57,7 @@ export const metadata: Metadata = {
                 url: "https://sergioaco.com/me.png", // Ensure this path is correct
                 width: 1200,
                 height: 630,
-                alt: "Sergio Acosta Quintana - Full Stack Developer",
+                alt: "Sergio Acosta Quintana - Backend Software Engineer",
             },
         ],
         locale: "en_US",
@@ -73,15 +76,11 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Sergio Acosta Quintana - Full Stack Developer",
+        title: "Sergio Acosta Quintana - Backend Software Engineer",
         description:
-            "Full Stack Developer crafting scalable enterprise apps with Java/Spring Boot and modern web solutions with React/Node.js.",
+            "Backend engineer crafting scalable payment services with Java, Spring Boot, distributed systems, and modern API design.",
         images: ["https://sergioaco.com/me.png"], // Ensure this path is correct
         creator: "@sergioaco", // Make sure this is your Twitter handle
-    },
-    verification: {
-        google: "your-google-site-verification-code",
-        yandex: "your-yandex-verification-code",
     },
     alternates: {
         canonical: "https://sergioaco.com",
@@ -94,7 +93,7 @@ const structuredData = {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sergio Acosta Quintana",
-    "jobTitle": "Full-Stack Developer",
+    "jobTitle": "Backend Software Engineer",
     "url": "https://sergioaco.com",
     "image": "https://sergioaco.com/me.png",
     "email": "mailto:sergioacostaquintana@gmail.com",
@@ -106,20 +105,20 @@ const structuredData = {
         "addressCountry": "ES"
     },
     "sameAs": [
-        "https://www.linkedin.com/in/sergioacostaquintana",
+        "https://linkedin.com/in/sergioacostaquintana",
         "https://github.com/sergioacostater",
         "https://sergioaco.com"
     ],
-    "description": "Full-Stack Developer with experience in enterprise environments. Skilled in Java (Spring Boot), PostgreSQL, JavaScript (React, Node.js), microservices, and automation.",
+    "description": "Backend Software Engineer specialized in enterprise payments, Java, Spring Boot, and distributed systems.",
     "worksFor": {
         "@type": "Organization",
-        "name": "BITBOX S.L. (IKEA)"
+        "name": "SNGULAR / Inditex"
     },
     "alumniOf": [
         {
             "@type": "EducationalOrganization",
             "name": "University of Las Palmas de Gran Canaria",
-            "description": "Computer Engineering (Expected 2026)"
+            "description": "BSc Computer Engineering (Expected graduation 2026)"
         },
         {
             "@type": "EducationalOrganization",
@@ -128,23 +127,25 @@ const structuredData = {
         }
     ],
     "knowsAbout": [
-        "Java",
-        "Spring Boot",
-        "JavaScript",
-        "React.js",
-        "Node.js",
+        "Enterprise Payments",
+        "Java 21",
+        "Spring Boot 3",
+        "DB2",
         "PostgreSQL",
+        "MongoDB",
+        "Couchbase",
         "Microservices",
-        "Kafka",
+        "Apache Kafka",
         "Docker",
         "AWS",
-        "REST APIs",
+        "OpenAPI",
+        "REST API Design",
         "CI/CD",
-        "Git",
         "TypeScript",
-        "SQL",
-        "Python",
-        "Linux Server Management"
+        "React",
+        "Distributed Systems",
+        "Clean Architecture",
+        "Domain-Driven Design"
     ],
     "knowsLanguage": [
         {
@@ -157,7 +158,7 @@ const structuredData = {
             "@type": "Language",
             "name": "English",
             "alternateName": "en",
-            "description": "Professional Fluency (B2)"
+            "description": "Professional Working Proficiency (B2/C1)"
         }
     ]
 };
