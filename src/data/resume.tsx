@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon } from "lucide-react";
+import { HomeIcon } from "lucide-react";
 import type { ReactNode } from "react";
 
 type PortfolioProject = {
@@ -58,7 +58,7 @@ export const DATA = {
     languages: ["English (B2/C1)", "Spanish (Native)"],
     navbar: [
         { href: "/", icon: HomeIcon, label: "Home" },
-        { href: "/blog", icon: NotebookIcon, label: "Blog" },
+        // { href: "/blog", icon: NotebookIcon, label: "Blog" },
     ],
     contact: {
         email: "sergioacostaquintana@gmail.com",
@@ -123,7 +123,7 @@ export const DATA = {
             degree: "BSc Computer Engineering (Final Year Student)",
             logoUrl: "/ulpgc.webp",
             start: "2022",
-            end: "Expected graduation Jun 2026",
+            end: "Expected",
             location: "Las Palmas, Spain",
             description:
                 "Final year student focused on software architecture, distributed systems, and backend engineering.",

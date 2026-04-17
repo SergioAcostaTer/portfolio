@@ -16,26 +16,34 @@ const fontSans = FontSans({
 // --- ENHANCED METADATA ---
 // Based on your CV with Java, Spring Boot, and enterprise keywords
 export const metadata: Metadata = {
-    metadataBase: new URL(DATA.url), // Assuming DATA.url is "https://sergioaco.com"
+    metadataBase: new URL(DATA.url),
     title: {
         default: "Sergio Acosta Quintana - Backend Software Engineer",
         template: "%s | Sergio Acosta Quintana - Backend Software Engineer",
     },
     description:
-        "Backend Software Engineer focused on enterprise payments, Java, and distributed systems. Experience at IKEA and Inditex building resilient Spring Boot services, event-driven integrations, and production-grade APIs.",
+        "Backend Software Engineer specializing in enterprise payments, Java 21, Spring Boot 3, and distributed systems. Experience at IKEA and Inditex delivering resilient APIs, event-driven integrations, and production-grade services.",
     keywords: [
         "Sergio Acosta Quintana",
         "Backend Software Engineer",
         "Payments",
+        "Payment Gateway",
         "Java 21",
         "Spring Boot 3",
+        "Spring Batch",
+        "Spring Security",
         "Distributed Systems",
         "Event-Driven Architecture",
         "Apache Kafka",
         "DB2",
         "MongoDB",
         "Couchbase",
+        "PostgreSQL",
         "OpenAPI",
+        "REST APIs",
+        "Microservices",
+        "Clean Architecture",
+        "Domain-Driven Design",
         "TypeScript",
         "React",
         "CI/CD",
@@ -46,15 +54,18 @@ export const metadata: Metadata = {
     ],
     authors: [{ name: "Sergio Acosta Quintana", url: "https://sergioaco.com" }],
     creator: "Sergio Acosta Quintana",
+    applicationName: "Sergio Acosta Quintana Portfolio",
+    category: "technology",
+    referrer: "origin-when-cross-origin",
     openGraph: {
         title: "Sergio Acosta Quintana - Backend Software Engineer",
         description:
-            "Backend engineer in enterprise payments, specializing in Java, Spring Boot, distributed systems, and resilient API integrations.",
+            "Backend engineer in enterprise payments focused on Java 21, Spring Boot 3, event-driven systems, and scalable API design.",
         url: "https://sergioaco.com",
         siteName: "Sergio Acosta Quintana",
         images: [
             {
-                url: "https://sergioaco.com/sergio.jpg", // Ensure this path is correct
+                url: "https://sergioaco.com/sergio.jpg",
                 width: 1200,
                 height: 630,
                 alt: "Sergio Acosta Quintana - Backend Software Engineer",
@@ -78,12 +89,17 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Sergio Acosta Quintana - Backend Software Engineer",
         description:
-            "Backend engineer crafting scalable payment services with Java, Spring Boot, distributed systems, and modern API design.",
-        images: ["https://sergioaco.com/sergio.jpg"], // Ensure this path is correct
-        creator: "@sergioaco", // Make sure this is your Twitter handle
+            "Backend engineer crafting scalable payment services with Java 21, Spring Boot 3, distributed systems, and modern API design.",
+        images: ["https://sergioaco.com/sergio.jpg"],
+        creator: "@sergioaco",
     },
     alternates: {
         canonical: "https://sergioaco.com",
+    },
+    formatDetection: {
+        email: true,
+        address: true,
+        telephone: true,
     },
 };
 
@@ -91,74 +107,90 @@ export const metadata: Metadata = {
 // The most detailed version based on your final CV
 const structuredData = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sergio Acosta Quintana",
-    "jobTitle": "Backend Software Engineer",
-    "url": "https://sergioaco.com",
-    "image": "https://sergioaco.com/sergio.jpg",
-    "email": "mailto:sergioacostaquintana@gmail.com",
-    "telephone": "+34600243994",
-    "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Las Palmas",
-        "addressRegion": "Canary Islands",
-        "addressCountry": "ES"
-    },
-    "sameAs": [
-        "https://linkedin.com/in/sergioacostaquintana",
-        "https://github.com/sergioacostater",
-        "https://sergioaco.com"
-    ],
-    "description": "Backend Software Engineer specialized in enterprise payments, Java, Spring Boot, and distributed systems.",
-    "worksFor": {
-        "@type": "Organization",
-        "name": "SNGULAR / Inditex"
-    },
-    "alumniOf": [
+    "@graph": [
         {
-            "@type": "EducationalOrganization",
-            "name": "University of Las Palmas de Gran Canaria",
-            "description": "BSc Computer Engineering (Expected graduation 2026)"
+            "@type": "WebSite",
+            "@id": "https://sergioaco.com/#website",
+            "url": "https://sergioaco.com",
+            "name": "Sergio Acosta Quintana",
+            "inLanguage": "en",
+            "publisher": {
+                "@id": "https://sergioaco.com/#person"
+            }
         },
         {
-            "@type": "EducationalOrganization",
-            "name": "Halmstad University",
-            "description": "Computer Science (Exchange Program 2024-2025)"
-        }
-    ],
-    "knowsAbout": [
-        "Enterprise Payments",
-        "Java 21",
-        "Spring Boot 3",
-        "DB2",
-        "PostgreSQL",
-        "MongoDB",
-        "Couchbase",
-        "Microservices",
-        "Apache Kafka",
-        "Docker",
-        "AWS",
-        "OpenAPI",
-        "REST API Design",
-        "CI/CD",
-        "TypeScript",
-        "React",
-        "Distributed Systems",
-        "Clean Architecture",
-        "Domain-Driven Design"
-    ],
-    "knowsLanguage": [
-        {
-            "@type": "Language",
-            "name": "Spanish",
-            "alternateName": "es",
-            "description": "Native"
-        },
-        {
-            "@type": "Language",
-            "name": "English",
-            "alternateName": "en",
-            "description": "Professional Working Proficiency (B2/C1)"
+            "@type": "Person",
+            "@id": "https://sergioaco.com/#person",
+            "name": "Sergio Acosta Quintana",
+            "jobTitle": "Backend Software Engineer",
+            "url": "https://sergioaco.com",
+            "image": "https://sergioaco.com/sergio.jpg",
+            "email": "mailto:sergioacostaquintana@gmail.com",
+            "telephone": "+34600243994",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Las Palmas",
+                "addressRegion": "Canary Islands",
+                "addressCountry": "ES"
+            },
+            "sameAs": [
+                "https://linkedin.com/in/sergioacostaquintana",
+                "https://github.com/sergioacostater",
+                "https://sergioaco.com"
+            ],
+            "description": "Backend Software Engineer specialized in enterprise payments, Java 21, Spring Boot 3, and distributed systems.",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "SNGULAR / Inditex"
+            },
+            "alumniOf": [
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "University of Las Palmas de Gran Canaria",
+                    "description": "BSc Computer Engineering"
+                },
+                {
+                    "@type": "EducationalOrganization",
+                    "name": "Halmstad University",
+                    "description": "Computer Science (Exchange Program 2024-2025)"
+                }
+            ],
+            "knowsAbout": [
+                "Enterprise Payments",
+                "Payment Gateway Integrations",
+                "Java 21",
+                "Spring Boot 3",
+                "Spring Batch",
+                "Spring Security",
+                "IBM DB2",
+                "PostgreSQL",
+                "MongoDB",
+                "Couchbase",
+                "Microservices",
+                "Apache Kafka",
+                "OpenAPI",
+                "REST API Design",
+                "CI/CD",
+                "AWS",
+                "Docker",
+                "Distributed Systems",
+                "Clean Architecture",
+                "Domain-Driven Design"
+            ],
+            "knowsLanguage": [
+                {
+                    "@type": "Language",
+                    "name": "Spanish",
+                    "alternateName": "es",
+                    "description": "Native"
+                },
+                {
+                    "@type": "Language",
+                    "name": "English",
+                    "alternateName": "en",
+                    "description": "Professional Working Proficiency (B2/C1)"
+                }
+            ]
         }
     ]
 };
@@ -181,6 +213,8 @@ export default function RootLayout({
                 <link rel="icon" href="/favicon.png" />
                 {/* Preload key assets */}
                 <link rel="preload" href="/sergio.jpg" as="image" />
+                <meta name="geo.region" content="ES-CN" />
+                <meta name="geo.placename" content="Las Palmas" />
             </head>
             <body
                 className={cn(
