@@ -54,7 +54,7 @@ export const metadata: Metadata = {
         siteName: "Sergio Acosta Quintana",
         images: [
             {
-                url: "https://sergioaco.com/me.png", // Ensure this path is correct
+                url: "https://sergioaco.com/sergio.jpg", // Ensure this path is correct
                 width: 1200,
                 height: 630,
                 alt: "Sergio Acosta Quintana - Backend Software Engineer",
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
         title: "Sergio Acosta Quintana - Backend Software Engineer",
         description:
             "Backend engineer crafting scalable payment services with Java, Spring Boot, distributed systems, and modern API design.",
-        images: ["https://sergioaco.com/me.png"], // Ensure this path is correct
+        images: ["https://sergioaco.com/sergio.jpg"], // Ensure this path is correct
         creator: "@sergioaco", // Make sure this is your Twitter handle
     },
     alternates: {
@@ -95,7 +95,7 @@ const structuredData = {
     "name": "Sergio Acosta Quintana",
     "jobTitle": "Backend Software Engineer",
     "url": "https://sergioaco.com",
-    "image": "https://sergioaco.com/me.png",
+    "image": "https://sergioaco.com/sergio.jpg",
     "email": "mailto:sergioacostaquintana@gmail.com",
     "telephone": "+34600243994",
     "address": {
@@ -180,7 +180,7 @@ export default function RootLayout({
                 {/* Favicon */}
                 <link rel="icon" href="/favicon.png" />
                 {/* Preload key assets */}
-                <link rel="preload" href="/me.png" as="image" />
+                <link rel="preload" href="/sergio.jpg" as="image" />
             </head>
             <body
                 className={cn(

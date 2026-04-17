@@ -23,7 +23,7 @@ export const DATA = {
     description: "Backend Software Engineer | Payments, Java & Distributed Systems",
     summary:
         "Backend Engineer specializing in enterprise payments, high-availability Java services, and event-driven architectures. I modernized critical systems at [IKEA](/#work) and now work on [Inditex payment gateway integrations](/#work) with Spring Boot, DB2, MongoDB, Couchbase, OpenAPI, and React. Focused on distributed systems, API design, cloud infrastructure, and CI/CD automation with Clean Architecture and Domain-Driven Design.",
-    avatarUrl: "/me.png",
+    avatarUrl: "/sergio.jpg",
     skills: [
         "Java 21",
         "Spring Boot 3",
@@ -96,7 +96,7 @@ export const DATA = {
             href: "https://www.sngular.com/",
             location: "Remote",
             title: "Backend Software Engineer",
-            logoUrl: "/logo2.png",
+            logoUrl: "/sngular.jpg",
             start: "Apr 2026",
             startDate: new Date(2026, 3),
             end: "Present",
